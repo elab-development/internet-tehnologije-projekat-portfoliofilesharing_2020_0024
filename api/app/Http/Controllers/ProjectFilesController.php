@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProjectFileResource;
 use App\Models\ProjectFiles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,7 +14,7 @@ class ProjectFilesController extends BaseController
     public function index()
     {
         $projectFiles = ProjectFiles::all();
-        return $this->success('Project files retrieved successfully', $projectFiles);
+        return $this->success('Project files retrieved successfully', ProjectFileResource::collection($projectFiles));
     }
 
     public function show($id)
@@ -67,7 +68,7 @@ class ProjectFilesController extends BaseController
     public function findByProject($projectId)
     {
         $projectFiles = ProjectFiles::where('project_id', $projectId)->get();
-        return $this->success('Project files retrieved successfully', $projectFiles);
+        return $this->success('Project files retrieved successfully', ProjectFileResource::collection($projectFiles));
     }
 
     public function paginateFiles(Request $request)
