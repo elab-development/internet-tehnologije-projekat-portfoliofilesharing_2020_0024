@@ -9,7 +9,7 @@ class ProjectShared extends Model
 {
     use HasFactory;
 
-    protected $table = 'project_shared';
+    protected $table = 'projects_shared';
 
     protected $fillable = ['project_id', 'user_id'];
 
