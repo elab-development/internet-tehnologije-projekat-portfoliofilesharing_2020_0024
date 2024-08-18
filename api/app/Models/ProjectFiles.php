@@ -9,7 +9,7 @@ class ProjectFiles extends Model
 {
     use HasFactory;
 
-    protected $table = 'project_files';
+    protected $table = 'projects_files';
 
     protected $fillable = ['project_id', 'file_name', 'url', 'description'];
 
