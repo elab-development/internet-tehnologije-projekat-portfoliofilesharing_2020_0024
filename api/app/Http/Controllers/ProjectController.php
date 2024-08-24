@@ -89,4 +89,20 @@ class ProjectController extends BaseController
 
         return $this->success('Projects retrieved successfully', ProjectResource::collection($projects));
     }
+
+    public function chartData(Request $request)
+    {
+        $projects = DB::table('projects')
+            ->groupBy('status')
+            ->select('status', DB::raw('count(*) as total'))
+            ->get();
+
+        return $this->success('Projects retrieved successfully', $projects);
+    }
+
+    public function paginateProjects(Request $request)
+    {
+        $projects = Project::paginate($request->per_page ?? 5);
+        return $this->success('Projects retrieved successfully', $projects);
+    }
 }

@@ -35,4 +35,6 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::post('project-shared', [ProjectSharedController::class, 'store']);
     Route::get('projects', [ProjectController::class, 'index']);
     Route::get('projects/{id}', [ProjectController::class, 'show']);
+    Route::get('paginate-projects', [ProjectController::class, 'paginateProjects']);
+    Route::get('chart', [ProjectController::class, 'chartData']);
 });
