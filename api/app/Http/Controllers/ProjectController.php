@@ -6,6 +6,7 @@ use App\Http\Resources\ProjectResource;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class ProjectController extends BaseController
 {
@@ -100,9 +101,8 @@ class ProjectController extends BaseController
         return $this->success('Projects retrieved successfully', $projects);
     }
 
-    public function paginateProjects(Request $request)
-    {
+    public function paginateProjects(Request $request) {
         $projects = Project::paginate($request->per_page ?? 5);
         return $this->success('Projects retrieved successfully', $projects);
-    }
+    }
 }
