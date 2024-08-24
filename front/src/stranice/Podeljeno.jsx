@@ -1,9 +1,10 @@
 import React from 'react';
+import Naslov from "../komponente/Naslov";
 
 const Podeljeno = () => {
     return (
         <div>
-            Podeljeno
+            <Naslov naslov="Work in progress" podnaslov="Ova stranica je u izradi" />
         </div>
     );
 };
