@@ -10,3 +10,12 @@ body {
   border: black 1px solid;
   padding: 30px;
 }
+
+footer {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: #fff;
+}

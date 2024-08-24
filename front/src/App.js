@@ -10,6 +10,7 @@ import Login from "./stranice/Login";
 import Projekti from "./stranice/Projekti";
 import Podeljeno from "./stranice/Podeljeno";
 import Admin from "./stranice/Admin";
+import Footer from './komponente/Footer';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
                 </Routes>
             </BrowserRouter>
         </Container>
+
+        <Footer />
 
     </>
   );
